@@ -17,7 +17,7 @@ export class DataTableComponent implements AfterViewInit {
   constructor(private securitiesService: SecuritiesService) { }
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['index', 'accumulated_turnover', 'account_executive', 'daily_turnover'];
+  displayedColumns = ['index', 'account_executive', 'daily_turnover', 'accumulated_turnover'];
 
   ngAfterViewInit() {
     this.dataSource = new DataTableDataSource(this.paginator, this.sort, this.securitiesService);
