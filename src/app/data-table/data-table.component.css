@@ -1,0 +1,40 @@
+.full-width-table {
+  width: 100%;
+}
+
+.data-table {
+  margin: auto;
+  max-width: 1000px;
+  margin-bottom: 50px;
+}
+
+.mat-table {
+  box-shadow: 0 0 15px rgb(236, 236, 236);
+  table-layout: fixed;
+}
+
+.mat-table .mat-row {
+  height: auto; 
+}
+
+  .mat-table .mat-row .mat-cell {
+    height: auto;
+    padding: 5px;
+  }
+
+  .mat-row:nth-child(odd) {
+    background-color: #F6F6F6;
+  }
+
+.indexClass {
+  width: 40px;
+}
+
+.mat-cell, .mat-header-cell {
+  border: 1px solid #ddd;
+  padding: 5px;
+}
+
+tr.mat-header-row {
+  height: 40px;
+}

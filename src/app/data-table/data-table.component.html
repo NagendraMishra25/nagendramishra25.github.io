@@ -1,0 +1,34 @@
+<div class="mat-elevation-z8 data-table">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- Position Column -->
+    <ng-container matColumnDef="index">
+      <th mat-header-cell *matHeaderCellDef class="indexClass">{{' '}}</th>
+      <td mat-cell *matCellDef="let row; let i = index"> {{i+1}} </td>
+    </ng-container>
+
+    <!-- accumulated_turnover Column -->
+    <ng-container matColumnDef="accumulated_turnover">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Accumulated Turnover</th>
+      <td mat-cell *matCellDef="let row">{{row.accumulated_turnover}}</td>
+    </ng-container>
+
+    <!-- account_executive Column -->
+    <ng-container matColumnDef="account_executive">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Account Executive</th>
+      <td mat-cell *matCellDef="let row">{{row.account_executive}}</td>
+    </ng-container>
+
+    <!-- daily_turnover Column -->
+    <ng-container matColumnDef="daily_turnover">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Daily Turnover</th>
+      <td mat-cell *matCellDef="let row">{{row.daily_turnover}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns; let i = index"></tr>
+  </table>
+
+  <mat-paginator #paginator
+    [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons>
+  </mat-paginator>
+</div>
