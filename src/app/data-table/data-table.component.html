@@ -29,6 +29,8 @@
   </table>
 
   <mat-paginator #paginator
-    [pageSizeOptions]="[10, 20, 30]" showFirstLastButtons>
+    [length]="dataSource.length"
+    [pageSize]="10"
+    showFirstLastButtons>
   </mat-paginator>
 </div>
