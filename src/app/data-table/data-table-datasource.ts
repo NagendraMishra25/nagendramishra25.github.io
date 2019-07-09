@@ -22,22 +22,28 @@ import { SecuritiesService } from '../services/securities.service';
  */
 export class DataTableDataSource extends DataSource<Security> {
   data:Security[];
+  timeId:any;
 
   constructor(private paginator: MatPaginator, private sort: MatSort, private securitiesService: SecuritiesService) {
     super();
 
-    this.getSecuritiesData();
+    this.timeId = this.getSecuritiesData();
     setInterval(() => {
      this.getSecuritiesData();
     }, 5000);
+	
 
+	
   }
 
   getSecuritiesData() {
     this.securitiesService.getSecurities().subscribe(securities => {
       this.data = securities;
       console.log("hii--" + this.data);
-    });
+    }, (error) => {
+		console.log('error occured: ', error);
+        clearInterval(this.timeId);
+      });
   }
 
   /**
